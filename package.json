@@ -1,0 +1,23 @@
+{
+  "name": "url-shortener",
+  "version": "1.0.0",
+  "description": "A url shortener built on MEAN stack",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sunshead/url-shortener"
+  },
+  "keywords": [
+    "url",
+    "shortener"
+  ],
+  "author": "Danjin Sun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sunshead/url-shortener/issues"
+  },
+  "homepage": "https://github.com/sunshead/url-shortener"
+}
