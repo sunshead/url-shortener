@@ -1,10 +1,14 @@
 //modules required
 var express = require('express');
 var app = express();
+var path = require('path');
+
+//serve static files from public folder
+app.use(express.static(path.join(__dirname, 'public')));
 
 //homepage routing
 app.get('/', function(req, res) {
-
+	res.sendFile(path.join(__dirname, 'views/index.html'));
 });
 
 //shorten url routing
