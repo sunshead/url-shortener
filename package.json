@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/sunshead/url-shortener/issues"
   },
-  "homepage": "https://github.com/sunshead/url-shortener"
+  "homepage": "https://github.com/sunshead/url-shortener",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
