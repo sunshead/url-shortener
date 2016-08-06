@@ -7,7 +7,7 @@ A url shortening service built on MEAN stack
   项目架构：Node.js建立API，Express处理Http请求，AngularJS处理双向数据绑定，MongoDB存取Json文档。
 数据库Schema  
 ---
-  数据库中有ids和url两个collection：ids用于记录上一个文档的id并将其+1作为当前文档的id存入url中（因为MongoDB不支持自增id），url用于存储长地址和其对应的id。  
+  数据库中有ids和url两个collection：ids用于记录当前文档的序列号并将其作为该文档的id存入url中，之后将其+1（因为MongoDB不支持自增id）；url用于存储长地址和其对应的id。  
 ###### ids
 | _id | num |
 | ------------- | ------------- |
