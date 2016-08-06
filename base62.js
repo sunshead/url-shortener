@@ -14,6 +14,7 @@ function encode(n) {
 	var short_url = base10_to_62(n);
 	while (short_url.length < 5) { // Add padding
 	                short_url = CHARS[0] + short_url;
+	                console.log(short_url.length);
 	            }
 	return short_url;
 }
