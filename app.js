@@ -76,9 +76,9 @@ process.env.MONGOHQ_URL ||
 // operations and release them when the connection is complete.
 mongoose.connect("mongodb://heroku_7jz3mvhb:vk9l3enccfq7q3nu06kas8vskq@ds145415.mlab.com:45415/heroku_7jz3mvhb", function (err, res) {
   if (err) {
-  console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+  console.log ('ERROR connecting to mongoose. ' + err);
   } else {
-  console.log ('Succeeded connected to: ' + uristring);
+  console.log ('Succeeded connected to mongoose.');
   }
 });
 
