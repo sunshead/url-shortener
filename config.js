@@ -1,3 +1,5 @@
+//local db configuration file
+
 var config = {};
 
 config.db = {};

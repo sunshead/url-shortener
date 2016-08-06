@@ -2,16 +2,15 @@
 var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
-//var mongodb = require("mongodb");
 var path = require('path');
-//var config = require('./config');
+//var config = require('./config'); //local db config 
 var base62 = require('./base62.js'); //TBD
 //use body-parser middleware to handle post request
 var bodyParser = require('body-parser');
 
 var url = require('./models/url');
 
-//connext to MongoDB
+//connext to local MongoDB
 //mongoose.connect('mongodb://' + config.db.host + '/' + config.db.name);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
@@ -19,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true}));
 var uristring =
 process.env.MONGOLAB_URI ||
 process.env.MONGOHQ_URL ||
-'mongodb://localhost:3000/url_shortener';
+'mongodb://localhost/url_shortener';
 
 // The http server will listen to an appropriate port, or default to
 // port 5000.
