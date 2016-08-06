@@ -9,23 +9,15 @@ A url shortening service built on MEAN stack
 ---
   数据库中有ids和url两个collection：ids用于记录上一个文档的id并将其+1作为当前文档的id存入url中（因为MongoDB不支持自增id），url用于存储长地址和其对应的id。  
 ###### ids
-| First Header  | Second Header |
+| _id | num |
 | ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-  ids
-  ------------------
-  _id      |num
-  --------- --------
-  "counter"|10000000
-  --------- --------  
-  
-  url
-  -------------------------------------------------------
-  _id      |url                       |created_at
-  --------- -------------------------- ------------------
-  100000001|https://liaoyuan.io       |2016-08-06 12:00
-  --------- -------------------------- ------------------
+| "counter"  | 100000000  |
+
+###### url
+| _id | url | created_at|
+| ------------- | ------------------- | ---------------- |
+| 100000000     | https://liaoyuan.io | 2016-08-06 12:00 |
+
   
 实例&运行  
 ---
