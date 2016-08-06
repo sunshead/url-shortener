@@ -15,25 +15,6 @@ var url = require('./models/url');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 
-var uristring =
-process.env.MONGOLAB_URI ||
-process.env.MONGOHQ_URL ||
-'mongodb://localhost/url_shortener';
-
-// The http server will listen to an appropriate port, or default to
-// port 5000.
-app.set('port', (process.env.PORT || 5000));
-
-// Makes connection asynchronously.  Mongoose will queue up database
-// operations and release them when the connection is complete.
-mongoose.connect(uristring, function (err, res) {
-  if (err) {
-  console.log ('ERROR connecting to: ' + uristring + '. ' + err);
-  } else {
-  console.log ('Succeeded connected to: ' + uristring);
-  }
-});
-
 //serve static files from public folder
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -83,6 +64,25 @@ app.get('/:encoded_id', function(req, res) {
 		}
 	});
 
+});
+
+var uristring =
+process.env.MONGOLAB_URI ||
+process.env.MONGOHQ_URL ||
+'mongodb://localhost/url_shortener';
+
+// The http server will listen to an appropriate port, or default to
+// port 5000.
+app.set('port', (process.env.PORT || 5000));
+
+// Makes connection asynchronously.  Mongoose will queue up database
+// operations and release them when the connection is complete.
+mongoose.connect(uristring, function (err, res) {
+  if (err) {
+  console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+  } else {
+  console.log ('Succeeded connected to: ' + uristring);
+  }
 });
 
 app.listen(app.get('port'), function() {
