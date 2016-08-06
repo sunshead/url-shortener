@@ -1,7 +1,7 @@
 var CHARS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHUJKLMNOPQRSTUVWXYZ";
 var base = CHARS.length; //62
 
-//convert base 10 integer to base 62 string, 除二取余法
+//convert base 10 integer to base 62 string, 除K取余法
 function base10_to_62(n) {
 	if (n > base) {
 		return base10_to_62(Math.floor(n / base)) + CHARS[n % base];
