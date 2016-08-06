@@ -2,7 +2,7 @@
 var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
-var mongodb = require("mongodb");
+//var mongodb = require("mongodb");
 var path = require('path');
 //var config = require('./config');
 var base62 = require('./base62.js'); //TBD
@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true}));
 var uristring =
 process.env.MONGOLAB_URI ||
 process.env.MONGOHQ_URL ||
-'mongodb://localhost/HelloMongoose';
+'mongodb://localhost:3000/url_shortener';
 
 // The http server will listen to an appropriate port, or default to
 // port 5000.
