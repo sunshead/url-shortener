@@ -9,30 +9,31 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="css/style.css" rel="stylesheet">
 </head>
-<body>
-
-  <div class="wrapper">
-
-    <h1>URL Shortener</h1>
-
-      <div class="col-lg-12">
-        <div class="input-group">
-          <input id="long-url" type="text" class="form-control" placeholder="Original url">
-          <span>
-            <button class="btn btn-convert" type="button">Submit</button>
-          </span>
+<body ng-app="urlApp" ng-controller="urlController">
+<h1>URL Shortener</h1>
+<div class="container-fluid">
+    <form ng-submit="processForm()">
+        <div class="col-lg-12">
+          <div class="form-group">
+            <input id="long-url" type="text" class="form-control" placeholder="Paste original url here" ng-model="longUrl">
+            <button type="submit" class="btn btn-convert">
+            Submit
+            </button>
+            </span>
+          </div>
         </div>
-      </div>
 
-      <div class="col-lg-12">
-        <div id="short-url"></div>
-      </div>
+        <div class="result">
+          <a ng-href="{{shortUrl}}" target="_blank" ng-bind="shortUrl"></a>
+        </div>
 
+    </form>
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="js/converter.js"></script>
+  <!--<script src="js/converter.js"></script>-->
+  <script src="js/main.js"></script>
 </body>
 </html>
