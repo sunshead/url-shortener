@@ -71,10 +71,6 @@ process.env.MONGOLAB_URI ||
 process.env.MONGOHQ_URL ||
 'mongodb://localhost/url_shortener';
 
-// The http server will listen to an appropriate port, or default to
-// port 5000.
-app.set('port', (process.env.PORT || 5000));
-
 // Makes connection asynchronously.  Mongoose will queue up database
 // operations and release them when the connection is complete.
 mongoose.connect(uristring, function (err, res) {
@@ -85,6 +81,6 @@ mongoose.connect(uristring, function (err, res) {
   }
 });
 
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
+app.listen(process.env.PORT || 3000, function() {
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
