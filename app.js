@@ -65,15 +65,16 @@ app.get('/:encoded_id', function(req, res) {
 	});
 
 });
-
+/*
 var uristring =
 process.env.MONGOLAB_URI ||
 process.env.MONGOHQ_URL ||
 'mongodb://localhost/url_shortener';
+*/
 
 // Makes connection asynchronously.  Mongoose will queue up database
 // operations and release them when the connection is complete.
-mongoose.connect(uristring, function (err, res) {
+mongoose.connect("mongodb://heroku_7jz3mvhb:vk9l3enccfq7q3nu06kas8vskq@ds145415.mlab.com:45415/heroku_7jz3mvhb", function (err, res) {
   if (err) {
   console.log ('ERROR connecting to: ' + uristring + '. ' + err);
   } else {
