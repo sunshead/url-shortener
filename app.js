@@ -59,7 +59,7 @@ app.post('/api/convert', function(req, res) {
 	url.findOne({url: longUrl}, function (err, entry){
 		//if exist, return
 		if (entry) {
-			shortUrl = "https://url-converter.herokuapp.com" + base62.encode(entry._id);
+			shortUrl = "https://url-converter.herokuapp.com/" + base62.encode(entry._id);
 			res.send({'shortUrl': shortUrl});
 		}
 		//if new, save to url collection
@@ -69,7 +69,7 @@ app.post('/api/convert', function(req, res) {
 				if (err) {
 					console.log(err);
 				}
-				shortUrl = "https://url-converter.herokuapp.com" + base62.encode(newUrl._id);
+				shortUrl = "https://url-converter.herokuapp.com/" + base62.encode(newUrl._id);
 				res.send({'shortUrl': shortUrl});
 			});
 		}
@@ -87,7 +87,7 @@ app.get('/:encoded_id', function(req, res) {
 		if (entry) {
 			res.redirect(entry.url);
 		} else {
-			res.redirect("https://url-converter.herokuapp.com");
+			res.redirect("https://url-converter.herokuapp.com/");
 		}
 	});
 
