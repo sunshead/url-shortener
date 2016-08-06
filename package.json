@@ -1,6 +1,9 @@
 {
   "name": "url-shortener",
   "version": "1.0.0",
+  "engines": {
+    "node": "4.4.7"
+  },
   "description": "A url shortener built on MEAN stack",
   "main": "app.js",
   "scripts": {
